@@ -11,7 +11,8 @@ def webhook(data: dict):
     r = requests.post(
         url=f'https://api.telegram.org/bot{settings.BOT_TOKEN}/sendMessage',
         data={
-            'text': data.get('message').get('text'),
+            # 'text': data.get('message').get('text'),
+            'text': str(data),
             'chat_id': data.get('message').get('chat').get('id'),
         }
     )
