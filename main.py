@@ -2,10 +2,11 @@ import requests
 from fastapi import FastAPI
 
 from config import settings
+from router import router
 
 
 app = FastAPI()
-
+app.include_router(router)
 
 @app.on_event('startup')
 def startup():

@@ -1,5 +1,6 @@
 from fastapi import APIRouter
+from api.webhook import router as webhook
 
 router = APIRouter()
 
-router.add_route()
+router.include_router(prefix='/api', router=webhook)
