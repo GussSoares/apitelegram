@@ -8,13 +8,13 @@ def filter_data(data: dict):
         redirect_data.update({
             'chat_id': message.get('chat').get('id'),
             'text': content,
-            'url': '/telegram/sendMessage',
+            'url': '/telegram/sendMessage/',
         }) 
     elif content := message.get('photo'):
         redirect_data.update({
             'chat_id': message.get('chat').get('id'),
             'file_id': content[-1].get('file_id'),
-            'url': '/telegram/sendPhoto',
+            'url': '/telegram/sendPhoto/',
         })
 
     return redirect_data
