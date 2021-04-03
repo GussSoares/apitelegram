@@ -7,7 +7,7 @@ def filter_data(data: dict):
     if content := message.get('text'):
         redirect_data.update({
             'chat_id': message.get('chat').get('id'),
-            'text': content.get('text'),
+            'text': content,
             'url': '/telegram/sendMessage',
         }) 
     elif content := message.get('photo'):
