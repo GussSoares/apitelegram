@@ -14,7 +14,9 @@ def webhook(data: dict = Depends(filter_data)):
         response = Telegram().send_message(data)
     elif data.get('type') == 'sendPhoto':
         response = Telegram().send_photo(data)
-    
+    else:
+        response = Telegram().send_message(data)
+
     return {
         'status': response.ok
     }
