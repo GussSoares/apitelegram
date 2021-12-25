@@ -1,13 +1,13 @@
 import requests
 from fastapi import FastAPI
 
-from settings.config import settings
 from router import router
+from settings.config import settings
 
 app = FastAPI()
 app.include_router(router)
 
 
-@app.get('/')
+@app.get("/")
 def startup():
-    return {'status': 'funciona'}
+    return {"status": "funciona"}
